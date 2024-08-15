@@ -11,7 +11,7 @@ function Transactions({transactions}) {
                     <Card.Body>
                         <Card.Title>{v.tname}</Card.Title>
                         <Card.Text>
-                        {v.ttype}
+                        Type : {v.ttype}
                         </Card.Text>
                         <Card.Text>
                         Amount : {v.tamount}

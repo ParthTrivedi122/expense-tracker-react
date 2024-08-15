@@ -1,0 +1,16 @@
+.sidebar {
+    position: static;
+}
+
+@media (min-width: 768px) {
+    .sidebar {
+        position: fixed;
+        top: 0;
+        height: 100vh;
+        overflow-y: auto; /* Ensure scroll if content is too long */
+    }
+
+    .content {
+        margin-left: 33.33%; /* Adjust this according to your sidebar width */
+    }
+}
