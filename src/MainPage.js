@@ -11,16 +11,20 @@ const MainPage = () => {
     function transactionDetails(tname, tamount, ttype, tdate) {
         setId(id + 1);
         console.log(id, tname, tamount, ttype, tdate);
-        setTransactions([...transactions, { id: id, tname: tname, tamount: tamount, ttype: ttype, tdate: tdate }]);
-    }
+        if(ttype==='Expense'){
+            setTransactions([...transactions, { id: id, tname: tname, tamount: tamount, ttype: ttype, tdate: tdate,tcolor:"#FFCCCB"}]);
+        }else{
+            setTransactions([...transactions, { id: id, tname: tname, tamount: tamount, ttype: ttype, tdate: tdate,tcolor:"#66FF99"}]);
+        }
+}
 
     return (
         <>
-            <Row>
-                <Col md={4} sm={12}  style={{ position: "fixed" }}>
+            <Row className="main-content">
+                <Col md={4} sm={12} className="sidebar">
                     <AddExpenseOrBuget transactionDetails={transactionDetails} />
                 </Col>
-                <Col md={{ span: 8, offset: 4 }} sm={12}>
+                <Col md={8} sm={12} className="content" style={{paddingRight:"0px"}}>
                     <h1>Transactions</h1>
                     <Transactions transactions={transactions} />
                 </Col>

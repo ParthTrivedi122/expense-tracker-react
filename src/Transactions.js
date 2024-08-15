@@ -7,7 +7,7 @@ function Transactions({transactions}) {
     {
         transactions.map((v)=>{
             return(
-                <Card style={{width: '100%',marginTop:"10px"}}>
+                <Card style={{width: '80%',marginTop:"10px",backgroundColor:v.tcolor}}>
                     <Card.Body>
                         <Card.Title>{v.tname}</Card.Title>
                         <Card.Text>
