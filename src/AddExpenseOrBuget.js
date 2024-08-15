@@ -3,8 +3,9 @@ import Forms from "./Forms";
 import Button from 'react-bootstrap/Button';
 import Col  from "react-bootstrap/Col";
 import Row from 'react-bootstrap/Row';
-const AddExpenseOrBuget = () =>{
+const AddExpenseOrBuget = ({transactionDetails}) =>{
     const [form,setForm]= useState(false);
+    const [budget,setBudget]= useState(0);
     function showForm(){
         setForm(!form);
     }
@@ -15,22 +16,14 @@ const AddExpenseOrBuget = () =>{
         </div>
         <Row >
                 <Col md='2'>
-                    <span>Budget:</span>
+                    <span>Budget:${budget}</span>
                 </Col>
-                <Col md='8'>
-                    {/* Content for Budget Value or Input can go here */}
-                </Col>
-                <Col md='2'>
-                    <Button variant="primary" className="btn-success" onClick={showForm}>
-                        Add
-                    </Button>
-                </Col>
+                
+                
         </Row>
-        {form?
-        (<Row>
-            <Forms className=" col "/>
-        </Row>):null
-        }
+        <Row>
+            <Forms className=" col " transactionDetails={transactionDetails}/>
+        </Row>
         </>
 
     )
