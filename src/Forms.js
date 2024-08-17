@@ -76,7 +76,7 @@ function Forms({transactionDetails}) {
             </ToggleButton>
         </ToggleButtonGroup>
       </Row>
-      <Button type="button" onClick={()=>{transactionDetails(name,amount,type,date)}}>Submit form</Button>
+      <Button type="button" onClick={()=>{transactionDetails(name,amount,type,date)}}>ADD</Button>
     </Form>
   );
 }

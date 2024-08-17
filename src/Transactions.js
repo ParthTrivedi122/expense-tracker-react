@@ -7,9 +7,9 @@ function Transactions({transactions}) {
     {
         transactions.map((v)=>{
             return(
-                <Card style={{width: '80%',marginTop:"10px",backgroundColor:v.tcolor}}>
+                <Card style={{width: '95%',marginTop:"10px",backgroundColor:v.tcolor}}>
                     <Card.Body>
-                        <Card.Title>{v.tname}</Card.Title>
+                        <Card.Title>{v.user} : {v.tname}</Card.Title>
                         <Card.Text>
                         Type : {v.ttype}
                         </Card.Text>
@@ -19,7 +19,6 @@ function Transactions({transactions}) {
                         <Card.Text>
                         Date: {v.tdate}
                         </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
                     </Card.Body>
                 </Card>
         )})
